@@ -10,4 +10,5 @@ router.register(r'users', views.UserViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('analytics/', views.analytics, name="analytics"),
+    path('ledger/', views.ledger, name="ledger"),
 ]

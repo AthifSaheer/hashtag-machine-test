@@ -21,6 +21,7 @@ def api_over_view(request):
 
         'List users': '/api/v1/admin/users/',
         'Analytics': '/api/v1/admin/analytics/',
+        'Ledger': '/api/v1/admin/ledger/',
     }
     return  Response(api_urls, status=status.HTTP_201_CREATED)
 
@@ -61,7 +62,7 @@ def order(request):
     Sample data for posting in this view.
     {
         "user" : "admin",
-        "product" : [1, 2, 3]
+        "products" : [1, 2, 3]
     }
     """
     if request.method == 'GET':
