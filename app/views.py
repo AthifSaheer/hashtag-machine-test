@@ -11,6 +11,7 @@ from .models import *
 @api_view(['GET'])
 def api_over_view(request):
     api_urls = {
+        'Default admin panel': '/admin/',
         'Login': '/api/v1/token/',
         'Refresh': '/api/v1/token/refresh/',
         'Register': '/api/v1/register/',
@@ -66,6 +67,7 @@ def product_list(request):
 @api_view(['GET', 'POST'])
 def order(request):
     """
+    Sample data for posting in this view.
     {
         "user" : "admin",
         "products" : [1, 2, 3]
