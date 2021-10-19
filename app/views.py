@@ -27,6 +27,13 @@ def api_over_view(request):
 
 @api_view(['POST'])
 def register(request):
+    """
+    {
+        "username" : "athif",
+        "email" : "athif@gmail.com",
+        "password" : "xzaq1234"
+    }
+    """
     if request.method == 'POST':
         srzl = UserRegisterSerializer(data=request.data)
         
@@ -59,7 +66,6 @@ def product_list(request):
 @api_view(['GET', 'POST'])
 def order(request):
     """
-    Sample data for posting in this view.
     {
         "user" : "admin",
         "products" : [1, 2, 3]
