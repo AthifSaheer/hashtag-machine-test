@@ -1,11 +1,9 @@
-# from django.shortcuts import render
+from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth.models import User
-from rest_framework import viewsets
-# from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework import viewsets
 from rest_framework import status
-from rest_framework_simplejwt.tokens import RefreshToken
 
 from .serializers import *
 from .models import *
@@ -13,15 +11,16 @@ from .models import *
 @api_view(['GET'])
 def api_over_view(request):
     api_urls = {
-        'login': '/api/v1/token/',
-        'refresh': '/api/v1/token/refresh/',
-        'register': '/api/v1/register/',
+        'Login': '/api/v1/token/',
+        'Refresh': '/api/v1/token/refresh/',
+        'Register': '/api/v1/register/',
 
-        'list procuct': '/api/v1/list/product/',
-        'order': '/api/v1/order/',
-        'payment transaction': '/api/v1/payment/transaction/',
+        'List procuct': '/api/v1/list/product/',
+        'Order': '/api/v1/order/',
+        'Payment transaction': '/api/v1/payment/transaction/',
 
-        'list users': '/api/v1/admin/users/',
+        'List users': '/api/v1/admin/users/',
+        'Analytics': '/api/v1/admin/analytics/',
     }
     return  Response(api_urls, status=status.HTTP_201_CREATED)
 
