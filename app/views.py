@@ -19,8 +19,9 @@ def api_over_view(request):
 
         'list procuct': '/api/v1/list/product/',
         'order': '/api/v1/order/',
+        'payment transaction': '/api/v1/payment/transaction/',
 
-        'list_users': '/api/v1/users/',
+        'list users': '/api/v1/admin/users/',
     }
     return  Response(api_urls, status=status.HTTP_201_CREATED)
 
